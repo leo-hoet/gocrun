@@ -58,7 +58,7 @@ steps:
       - "-c"
       - |
         gcloud run deploy ${_SERVICE_NAME}-$BUILD_ID \
-          --image $_GCR_HOSTNAME/$PROJECT_ID/$_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA \
+          --image $_GCR_HOSTNAME/gocrun/cloud-run-source-deploy/gocrun/gocrun:$COMMIT_SHA  \
           --region ${_DEPLOY_REGION} \
           --no-allow-unauthenticated
 
@@ -100,7 +100,7 @@ steps:
 
 substitutions:
   _GCR_HOSTNAME: us-central1-docker.pkg.dev
-  _SERVICE_NAME: microservice-template
+  _SERVICE_NAME: gocrun
   _DEPLOY_REGION: us-central1
   _REPOSITORY: samples
 
