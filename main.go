@@ -50,10 +50,15 @@ func homeHelloWord(w http.ResponseWriter, r *http.Request, l *slog.Logger) {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "4000"
+	}
+
 	logger = slog.New(slog.NewJSONHandler(os.Stdout, nil))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) { homeHelloWord(w, r, logger) })
 
 	fmt.Println("Starting server on port 4000")
-	http.ListenAndServe(":4000", nil)
+	http.ListenAndServe(":"+port, nil)
 }
