@@ -36,7 +36,7 @@ steps:
       [
         "build",
         "-t",
-        "$_GCR_HOSTNAME/$PROJECT_ID/$_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA",
+        "$_GCR_HOSTNAME/gocrun/cloud-run-source-deploy/gocrun/gocrun:$COMMIT_SHA",
         ".",
       ]
 
@@ -47,7 +47,7 @@ steps:
     args:
       - "-c"
       - |
-        while ! docker push '$_GCR_HOSTNAME/$PROJECT_ID/$_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'; do
+        while ! docker push '$_GCR_HOSTNAME/gocrun/cloud-run-source-deploy/gocrun/gocrun:$COMMIT_SHA'; do
           sleep 2
         done
 
