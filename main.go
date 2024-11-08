@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-const version = "1.0.1"
+const version = "1.0.2"
 
 var logger *slog.Logger
 
