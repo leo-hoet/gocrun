@@ -108,3 +108,4 @@ options:
   volumes:
     - name: go-modules
       path: /go
+  logging: CLOUD_LOGGING_ONLY
