@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-const version = "1.0.0"
+const version = "1.0.1"
 
 var logger *slog.Logger
 
@@ -59,6 +59,6 @@ func main() {
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) { homeHelloWord(w, r, logger) })
 
-	fmt.Println("Starting server on port 4000")
+	fmt.Println("Starting server on port " + port)
 	http.ListenAndServe(":"+port, nil)
 }

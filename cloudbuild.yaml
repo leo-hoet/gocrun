@@ -59,8 +59,7 @@ steps:
       - |
         gcloud run deploy ${_SERVICE_NAME}-$BUILD_ID \
           --image $_GCR_HOSTNAME/gocrun/cloud-run-source-deploy/gocrun/gocrun:$COMMIT_SHA  \
-          --region ${_DEPLOY_REGION} \
-          --no-allow-unauthenticated
+          --region ${_DEPLOY_REGION}
 
   - id: "Retrieve Service URL"
     name: "gcr.io/cloud-builders/gcloud:latest"
